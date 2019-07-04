@@ -125,22 +125,22 @@
     <!-- START HERE -->
 
     <!-- TOAST BUTTON -->
-    <a class="btn">Show Toast</a>
+    <a id="toast1"class="btn">Show Toast</a>
 
     <!-- ROUNDED TOAST -->
-    <a class="btn">Rounded Toast</a>
+    <a id="toast2" class="btn">Rounded Toast</a>
 
     <!-- CALLBACK ON DISMISS -->
-    <a class="btn">Toast With Callback</a>
+    <a id="toast3" class="btn">Toast With Callback</a>
 
     <br>
     <br>
 
     <!-- TOOLTIPS -->
-    <a class="btn">Bottom Tooltip</a>
-    <a class="btn">Top Tooltip</a>
-    <a class="btn">Right Tooltip</a>
-    <a class="btn">Left Tooltip</a>
+    <a class="btn tooltipped" data-delay="2000" data-position="bottom" data-tooltip="I am a tooltip">Bottom Tooltip</a>
+    <a class="btn tooltipped" data-delay="2000" data-position="top" data-tooltip="I am a tooltip">Top Tooltip</a>
+    <a class="btn tooltipped" data-delay="2000" data-position="right" data-tooltip="I am a tooltip">Right Tooltip</a>
+    <a class="btn tooltipped" data-delay="2000" data-position="left" data-tooltip="I am a tooltip">Left Tooltip</a>
 
 
     <!-- END HERE -->
@@ -165,8 +165,28 @@
       });
 
       // JAVASCRIPT START HERE //
+      // $('#toast1').click(function () {
+      //   Materialize.toast('Selamlar', 3000);
+      // });
+      document.getElementById('toast1').addEventListener('click', () => {
+        Materialize.toast('Selamlar', 3000);
+      });
+      $('#toast2').click(function () {
+        Materialize.toast('Merhabalar', 3000, 'rounded');
+      });
+      $('#toast3').click(function () {
+        Materialize.toast('Merhabalar', 3000, 'rounded', function () {
+          alert('Tost Yaptim (Sucuklu hemde)');
+        });
+      });
 
-
+      /* Pure javascript */
+      // create toast
+      Materialize.toast('Selamlar 2', 3000);
+      // remove toast
+      setTimeout(() => {
+        Materialize.Toast.removeAll();
+      }, 2000)
 
 
     });
