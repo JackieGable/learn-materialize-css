@@ -110,6 +110,68 @@
 </section>
 <!-- Stats -->
 
+<!-- chart -->
+<section class="section section-visitors blue lighten-4">
+  <div class="row">
+    <div class="col s12 m6 l8">
+      <div class="card-panel">
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+      </div>
+    </div>
+    <div class="col s12 m6 l4">
+      <!-- Comment -->
+      <ul class="collection with-header latest-comments">
+        <li class="collection-header"><h5>Latest Comments</h5></li>
+        <li class="collection-item avatar">
+          <img src="img/person1.jpg" class="circle">
+          <span class="title">Adem Ilter</span>
+          <p class="truncate">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci aut fugiat in, laboriosam quaerat quia
+            repellat repudiandae voluptas. Debitis deleniti distinctio labore libero molestias officia pariatur quis sed
+            sint.
+          </p>
+          <a href="#" class="approve green-text">Approve</a>  |
+          <a href="#" class="deny red-text">Deny</a>
+        </li>
+        <li class="collection-item avatar">
+          <img src="img/person2.jpg" class="circle">
+          <span class="title">Emre Yartasi</span>
+          <p class="truncate">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci aut fugiat in, laboriosam quaerat quia
+            repellat repudiandae voluptas. Debitis deleniti distinctio labore libero molestias officia pariatur quis sed
+            sint.
+          </p>
+          <a href="#" class="approve green-text">Approve</a>  |
+          <a href="#" class="deny red-text">Deny</a>
+        </li>
+        <li class="collection-item avatar">
+          <img src="img/person3.jpg" class="circle">
+          <span class="title">Yaprak Ayazoglu</span>
+          <p class="truncate">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci aut fugiat in, laboriosam quaerat quia
+            repellat repudiandae voluptas. Debitis deleniti distinctio labore libero molestias officia pariatur quis sed
+            sint.
+          </p>
+          <a href="#" class="approve green-text">Approve</a>  |
+          <a href="#" class="deny red-text">Deny</a>
+        </li>
+        <li class="collection-item avatar">
+          <img src="img/person4.jpg" class="circle">
+          <span class="title">Fatih Acet</span>
+          <p class="truncate">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci aut fugiat in, laboriosam quaerat quia
+            repellat repudiandae voluptas. Debitis deleniti distinctio labore libero molestias officia pariatur quis sed
+            sint.
+          </p>
+          <a href="#" class="approve green-text">Approve</a>  |
+          <a href="#" class="deny red-text">Deny</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- chart -->
+
 <!-- Preloader -->
 <div class="preloader-wrapper big active loader">
   <div class="spinner-layer spinner-blue-only">
@@ -126,9 +188,12 @@
 </div>
 <!-- Preloader -->
 
+
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="js/chart.js"></script>
 <script>
   // Hide sections
   $('.section').hide();
@@ -151,6 +216,15 @@
             $(this).text(Math.ceil(now));
           }
         });
+      })
+      // Comments - Approve & Deny
+      $('.approve').click(function (e) {
+        Materialize.toast('Comment Approved', 3000);
+        e.prevent_default();
+      })
+      $('.deny').click(function (e) {
+        Materialize.toast('Comment Denied', 3000);
+        e.prevent_default();
       })
     });
   }, 1000)
