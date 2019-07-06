@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/main.css"/>
+  <title>Galappear</title>
+</head>
+<body>
+<!-- Header -->
+<header class="main-header">
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <a href="#" data-activates="mobile-nav" class="button-collapse show-on-large">
+        <i class="material-icons">menu</i>
+      </a>
+      <a href="index.html" class="brand-logo">Galappear</a>
+      <ul class="right hide-on-med-and-down">
+        <li class="active"><a href="index.html">Abstract</a></li>
+        <li><a href="logos.html">Logos</a></li>
+        <li><a href="gaming.html">Gaming</a></li>
+      </ul>
+    </div>
+    <!-- side nav -->
+    <ul class="side-nav" id="mobile-nav">
+      <li><a href="index.html">Abstract</a></li>
+      <li><a href="logos.html">Logos</a></li>
+      <li><a href="gaming.html">Gaming</a></li>
+    </ul>
+    <!-- side nav -->
+  </nav>
+  <h1 class="center">I Do Graphic Design</h1>
+  <h4 class="center">Brad Traversy</h4>
+</header>
+<!-- Header -->
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script>
+  $(document).ready(function () {
+    // sidenav
+    $('.button-collapse').sideNav();
+  });
+</script>
+</body>
+</html>
