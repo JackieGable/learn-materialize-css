@@ -206,7 +206,35 @@
 <!-- Testimonial -->
 
 <!-- Contact -->
-
+<section class="section section-contact center scrollspy" id="contact">
+  <div id="googlemap"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m6 offset-m6">
+        <div class="card-panel z-depth-5">
+          <h4>Contact US</h4>
+          <div class="input-field">
+            <input type="text" id="name" placeholder="Name">
+            <label for="name">Name</label>
+          </div>
+          <div class="input-field">
+            <input type="text" id="email" placeholder="Email">
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field">
+            <input type="text" id="phone" placeholder="Phone Number">
+            <label for="phone">Phone</label>
+          </div>
+          <div class="input-field">
+            <textarea class="materialize-textarea" id="message" placeholder="Message"></textarea>
+            <label for="message">Message</label>
+          </div>
+          <input type="submit" value="Submit" class="btn blue-grey">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- Contact -->
 
 <!-- Footer -->
@@ -243,6 +271,7 @@
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
   $(document).ready(function () {
     // side nav
@@ -266,6 +295,34 @@
       }
     ];
     Materialize.scrollFire(options);
+
+    // google maps
+    const position = [42.361145, -71.057083];
+    const centerPosition = [42.377815, -70.981133];
+    function showGoogleMaps() {
+      // mapPosition
+      const latLng = new google.maps.LatLng(position[0], position[1]);
+      const centerLatLng = new google.maps.LatLng(centerPosition[0], centerPosition[1]);
+      // mapoptions
+      const mapOptions = {
+        zoom: 12,
+        streetViewControl: false,
+        scaleControl: true,
+        mapTypeId: google.maps.mapTypeId.ROADMAP,
+        center: centerLatLng
+      };
+      // create map
+      map = new google.maps.Map(document.getElementById('googlemap'), mapOptions);
+      // show map
+      marker = new google.maps.Marker({
+        position: LatLng,
+        map: map,
+        draggable: false,
+        animation: google.maps.Animation.DROP
+      });
+    }
+    // maps event
+    google.maps.event.addDomListener(window, 'load', showGoogleMaps);
   });
 </script>
 </body>
